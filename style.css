@@ -1,351 +1,296 @@
-```css
-/* ========================= */
-/* CONFIGURAÇÕES GERAIS */
-/* ========================= */
+```javascript id="r2r7mn"
+// =====================================
+// CALCULADORA DE PRODUÇÃO SUSTENTÁVEL
+// =====================================
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+function calcularProducao(){
 
-html{
-    scroll-behavior:smooth;
-}
+    let hectares =
+        Number(
+            document.getElementById("hectares").value
+        );
 
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:#f4f1e8;
-    color:#333;
-    line-height:1.7;
-}
+    let resultado =
+        document.getElementById("resultadoProducao");
 
-/* ========================= */
-/* HEADER */
-/* ========================= */
+    if(hectares <= 0){
 
-header{
-    background:linear-gradient(135deg,#2e7d32,#4caf50);
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-}
+        resultado.innerHTML =
+        "⚠️ Digite uma área válida.";
 
-header h1{
-    font-size:2.8rem;
-    margin-bottom:10px;
-}
-
-header p{
-    font-size:1.2rem;
-}
-
-/* ========================= */
-/* HERO */
-/* ========================= */
-
-.hero{
-    height:60vh;
-    background:
-    linear-gradient(
-        rgba(0,0,0,0.45),
-        rgba(0,0,0,0.45)
-    ),
-    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-}
-
-.hero-content{
-    max-width:700px;
-    padding:20px;
-}
-
-.hero h2{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:1.2rem;
-    margin-bottom:25px;
-}
-
-.btn{
-    display:inline-block;
-    background:#4caf50;
-    color:white;
-    text-decoration:none;
-    padding:12px 25px;
-    border-radius:8px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#388e3c;
-}
-
-/* ========================= */
-/* MAIN */
-/* ========================= */
-
-main{
-    width:90%;
-    max-width:1200px;
-    margin:30px auto;
-}
-
-/* ========================= */
-/* CARDS */
-/* ========================= */
-
-.card{
-    background:white;
-    padding:25px;
-    margin-bottom:25px;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-}
-
-.card h2{
-    color:#2e7d32;
-    margin-bottom:15px;
-    border-left:5px solid #4caf50;
-    padding-left:10px;
-}
-
-.card p{
-    margin-bottom:15px;
-    text-align:justify;
-}
-
-/* ========================= */
-/* BENEFÍCIOS */
-/* ========================= */
-
-.beneficios{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-bottom:25px;
-}
-
-.beneficio{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.beneficio:hover{
-    transform:translateY(-5px);
-}
-
-.beneficio h3{
-    color:#2e7d32;
-    margin-bottom:10px;
-}
-
-/* ========================= */
-/* INPUTS */
-/* ========================= */
-
-input[type="number"]{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
-}
-
-input[type="radio"],
-input[type="checkbox"]{
-    margin-right:8px;
-}
-
-label{
-    display:block;
-    margin:10px 0;
-}
-
-/* ========================= */
-/* BOTÕES */
-/* ========================= */
-
-button{
-    background:#2e7d32;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#1b5e20;
-}
-
-/* ========================= */
-/* BARRAS */
-/* ========================= */
-
-.barra{
-    width:100%;
-    height:25px;
-    background:#ddd;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:15px;
-    margin-bottom:15px;
-}
-
-#barraIndice,
-#barraCarbono{
-    width:0%;
-    height:100%;
-    background:linear-gradient(
-        90deg,
-        #66bb6a,
-        #2e7d32
-    );
-    transition:1s;
-}
-
-/* ========================= */
-/* RESULTADOS */
-/* ========================= */
-
-#resultadoProducao,
-#resultadoIndice,
-#resultadoCarbono,
-#resultadoQuiz{
-    margin-top:15px;
-    padding:15px;
-    background:#e8f5e9;
-    border-left:5px solid #4caf50;
-    border-radius:8px;
-    font-weight:500;
-}
-
-/* ========================= */
-/* CERTIFICADO */
-/* ========================= */
-
-#certificado{
-    margin-top:20px;
-}
-
-.certificado-box{
-    background:linear-gradient(
-        135deg,
-        #dcedc8,
-        #a5d6a7
-    );
-
-    border:3px solid #2e7d32;
-
-    border-radius:15px;
-
-    padding:25px;
-
-    text-align:center;
-}
-
-.certificado-box h3{
-    color:#1b5e20;
-    margin-bottom:10px;
-}
-
-.certificado-box p{
-    text-align:center;
-}
-
-/* ========================= */
-/* QUIZ */
-/* ========================= */
-
-.pergunta{
-    margin-bottom:25px;
-}
-
-.pergunta p{
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-/* ========================= */
-/* LISTAS */
-/* ========================= */
-
-ul{
-    padding-left:20px;
-}
-
-li{
-    margin-bottom:10px;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-
-footer{
-    background:#5d4037;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
-}
-
-/* ========================= */
-/* RESPONSIVIDADE */
-/* ========================= */
-
-@media(max-width:768px){
-
-    header h1{
-        font-size:2rem;
+        return;
     }
 
-    .hero{
-        height:50vh;
+    let aumentoProdutividade =
+        (hectares * 0.15).toFixed(1);
+
+    let retencaoAgua =
+        (hectares * 200).toLocaleString("pt-BR");
+
+    let impacto = "";
+
+    if(hectares < 50){
+        impacto = "Moderado";
+    }
+    else if(hectares < 150){
+        impacto = "Alto";
+    }
+    else{
+        impacto = "Muito Alto";
     }
 
-    .hero h2{
-        font-size:2rem;
+    resultado.innerHTML = `
+        <strong>Resultado da Simulação</strong><br><br>
+
+        🌱 Área analisada:
+        ${hectares} hectares<br>
+
+        🚜 Potencial de melhoria produtiva:
+        ${aumentoProdutividade}%<br>
+
+        💧 Capacidade adicional de retenção:
+        ${retencaoAgua} litros de água<br>
+
+        🌎 Impacto ambiental positivo:
+        ${impacto}
+    `;
+}
+
+// =====================================
+// ÍNDICE DE SUSTENTABILIDADE
+// =====================================
+
+function calcularIndice(){
+
+    let pontos = 0;
+
+    if(
+        document.getElementById("plantio").checked
+    ){
+        pontos += 25;
     }
 
-    .hero p{
-        font-size:1rem;
+    if(
+        document.getElementById("rotacao").checked
+    ){
+        pontos += 25;
     }
 
-    .card{
-        padding:18px;
+    if(
+        document.getElementById("cobertura").checked
+    ){
+        pontos += 25;
     }
 
-    button{
-        width:100%;
+    if(
+        document.getElementById("nascentes").checked
+    ){
+        pontos += 25;
     }
 
-    .beneficios{
-        grid-template-columns:1fr;
+    let nivel = "";
+
+    if(pontos === 100){
+
+        nivel = "🌟 Excelente";
+
+    }else if(pontos >= 75){
+
+        nivel = "✅ Muito Bom";
+
+    }else if(pontos >= 50){
+
+        nivel = "👍 Bom";
+
+    }else if(pontos >= 25){
+
+        nivel = "⚠️ Regular";
+
+    }else{
+
+        nivel = "❌ Precisa Melhorar";
+    }
+
+    document.getElementById(
+        "barraIndice"
+    ).style.width = pontos + "%";
+
+    document.getElementById(
+        "resultadoIndice"
+    ).innerHTML = `
+        <strong>Índice de Sustentabilidade</strong><br><br>
+
+        Pontuação:
+        ${pontos}/100<br>
+
+        Nível:
+        ${nivel}
+    `;
+}
+
+// =====================================
+// SIMULADOR AMBIENTAL
+// =====================================
+
+function simularCarbono(){
+
+    let area =
+        Number(
+            document.getElementById("areaCarbono").value
+        );
+
+    let resultado =
+        document.getElementById("resultadoCarbono");
+
+    if(area <= 0){
+
+        resultado.innerHTML =
+        "⚠️ Digite uma área válida.";
+
+        return;
+    }
+
+    let carbono =
+        (area * 0.5).toFixed(1);
+
+    let porcentagem =
+        Math.min(area,100);
+
+    document.getElementById(
+        "barraCarbono"
+    ).style.width =
+    porcentagem + "%";
+
+    resultado.innerHTML = `
+        <strong>Impacto Ambiental Estimado</strong><br><br>
+
+        🌎 Carbono compensado:
+        ${carbono} toneladas/ano<br>
+
+        🌱 Solo mais protegido<br>
+
+        💧 Melhor conservação da água<br>
+
+        🦋 Maior preservação da biodiversidade
+    `;
+}
+
+// =====================================
+// QUIZ
+// =====================================
+
+function corrigirQuiz(){
+
+    let total = 0;
+
+    let perguntas = [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+    ];
+
+    for(let i = 0; i < perguntas.length; i++){
+
+        let resposta =
+            document.querySelector(
+                `input[name="${perguntas[i]}"]:checked`
+            );
+
+        if(!resposta){
+
+            document.getElementById(
+                "resultadoQuiz"
+            ).innerHTML =
+            "⚠️ Responda todas as perguntas.";
+
+            return;
+        }
+
+        total += Number(resposta.value);
+    }
+
+    let mensagem = "";
+
+    if(total === 5){
+
+        mensagem =
+        "🏆 Guardião da Sustentabilidade";
+
+    }else if(total === 4){
+
+        mensagem =
+        "🌱 Excelente conhecimento";
+
+    }else if(total === 3){
+
+        mensagem =
+        "👍 Bom trabalho";
+
+    }else{
+
+        mensagem =
+        "📚 Continue aprendendo";
+    }
+
+    document.getElementById(
+        "resultadoQuiz"
+    ).innerHTML = `
+        <strong>Resultado</strong><br><br>
+
+        Acertos:
+        ${total}/5<br>
+
+        ${mensagem}
+    `;
+
+    gerarCertificado(total);
+}
+
+// =====================================
+// CERTIFICADO
+// =====================================
+
+function gerarCertificado(acertos){
+
+    let certificado =
+        document.getElementById(
+            "certificado"
+        );
+
+    if(acertos === 5){
+
+        certificado.innerHTML = `
+            <div class="certificado-box">
+
+                <h3>
+                    CERTIFICADO
+                </h3>
+
+                <p>
+                    🏆 Guardião da Sustentabilidade
+                </p>
+
+                <br>
+
+                <p>
+                    Parabéns!
+                </p>
+
+                <p>
+                    Você demonstrou excelente
+                    conhecimento sobre
+                    Agricultura Regenerativa
+                    e Conservação do Solo.
+                </p>
+
+            </div>
+        `;
+
+    }else{
+
+        certificado.innerHTML = "";
     }
 }
 ```
