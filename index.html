@@ -1,332 +1,285 @@
-<!-- ========================= -->
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<!-- INTRODUÇÃO -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
 
-<!-- ========================= -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<section class="card">
-    <h2>Introdução</h2>
+<body>
 
+    <header>
+        <h1>🌱 Agro Forte, Futuro Sustentável</h1>
+        <p>Equilíbrio entre Produção e Meio Ambiente</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Agricultura Regenerativa</h2>
+            <p>
+                Produzir alimentos, recuperar o solo e preservar os recursos
+                naturais para as próximas gerações.
+            </p>
+
+            <a href="#ferramentas" class="btn-hero">
+                Explorar Projeto
+            </a>
+        </div>
+    </section>
+
+    <main>
+
+        <section class="card">
+            <h2>Introdução</h2>
+
+            <p>
+                O agronegócio é um dos pilares da economia brasileira e possui
+                papel fundamental na produção de alimentos para milhões de
+                pessoas. Entretanto, o crescimento da produção agrícola deve
+                ocorrer de forma responsável, garantindo a preservação dos
+                recursos naturais.
+            </p>
+
+            <p>
+                A agricultura regenerativa surge como uma solução inovadora,
+                permitindo que a produção aumente enquanto o solo é recuperado,
+                a biodiversidade é preservada e os impactos ambientais são
+                reduzidos.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>O Problema</h2>
+
+            <p>
+                A degradação do solo é um dos principais desafios da agricultura
+                moderna. A erosão, a perda de nutrientes e a compactação da
+                terra reduzem a produtividade e podem comprometer a produção
+                futura de alimentos.
+            </p>
+
+            <p>
+                Quando práticas inadequadas são utilizadas por longos períodos,
+                os impactos ambientais se tornam maiores e a recuperação das
+                áreas afetadas exige mais tempo e investimento.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>O que é Agricultura Regenerativa?</h2>
+
+            <p>
+                A agricultura regenerativa reúne técnicas que ajudam a restaurar
+                a saúde do solo, aumentar a biodiversidade e tornar a produção
+                mais sustentável.
+            </p>
+
+            <p>
+                Entre essas práticas estão o plantio direto, a rotação de
+                culturas, a cobertura vegetal e a preservação de áreas naturais.
+                O objetivo é produzir alimentos enquanto se melhora a qualidade
+                do ambiente.
+            </p>
+        </section>
+
+        <section class="beneficios">
+
+            <div class="beneficio">
+                <h3>🌱 Solo Saudável</h3>
+                <p>Maior fertilidade e menos erosão.</p>
+            </div>
+
+            <div class="beneficio">
+                <h3>🚜 Produção Sustentável</h3>
+                <p>Maior eficiência produtiva no longo prazo.</p>
+            </div>
+
+            <div class="beneficio">
+                <h3>💧 Conservação da Água</h3>
+                <p>Melhor retenção de umidade no solo.</p>
+            </div>
+
+            <div class="beneficio">
+                <h3>🌎 Meio Ambiente</h3>
+                <p>Proteção dos recursos naturais.</p>
+            </div>
+
+        </section>
+
+        <section id="ferramentas" class="card">
+            <h2>🔧 Ferramentas Interativas</h2>
+
+            <p>
+                As ferramentas abaixo simulam situações reais da agricultura
+                sustentável e mostram como pequenas mudanças podem gerar grandes
+                benefícios para o campo e para o meio ambiente.
+            </p>
+        </section>
+
+        <!-- Calculadora -->
+        <section class="card">
+
+            <h2>🚜 Calculadora de Produção Sustentável</h2>
+
+            <p>
+                Informe a área da propriedade e descubra os benefícios
+                estimados da agricultura regenerativa.
+            </p>
+
+            <input type="number"
+                   id="hectares"
+                   placeholder="Digite a área em hectares">
+
+            <button onclick="calcularProducao()">
+                Calcular
+            </button>
+
+            <div id="resultadoProducao"></div>
+
+        </section>
+
+        <!-- Índice -->
+        <section class="card">
+
+            <h2>📊 Índice de Sustentabilidade</h2>
+
+            <p>
+                Marque as práticas adotadas e descubra o nível de
+                sustentabilidade da propriedade.
+            </p>
+
+            <label>
+                <input type="checkbox" id="plantio">
+                Plantio Direto
+            </label>
+
+            <label>
+                <input type="checkbox" id="rotacao">
+                Rotação de Culturas
+            </label>
+
+            <label>
+                <input type="checkbox" id="cobertura">
+                Cobertura Vegetal
+            </label>
+
+            <label>
+                <input type="checkbox" id="nascentes">
+                Preservação de Nascentes
+            </label>
+
+            <button onclick="calcularIndice()">
+                Avaliar
+            </button>
+
+            <div id="resultadoIndice"></div>
+
+        </section>
+
+        <!-- Carbono -->
+        <section class="card">
+
+            <h2>🌎 Simulador Ambiental</h2>
+
+            <p>
+                Descubra uma estimativa dos benefícios ambientais gerados pela
+                adoção de práticas sustentáveis.
+            </p>
+
+            <input type="number"
+                   id="areaCarbono"
+                   placeholder="Área em hectares">
+
+            <button onclick="simularCarbono()">
+                Simular
+            </button>
+
+            <div id="resultadoCarbono"></div>
+
+        </section>
+
+        <!-- Quiz -->
+        <section class="card">
+
+            <h2>🧠 Quiz da Sustentabilidade</h2>
+
+            <p>
+                Qual prática ajuda a conservar o solo?
+            </p>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                Queimadas
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="1">
+                Plantio Direto
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                Desmatamento
+            </label>
+
+            <button onclick="corrigirQuiz()">
+                Ver Resultado
+            </button>
+
+            <div id="resultadoQuiz"></div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Relação com a Sustentabilidade</h2>
+
+            <p>
+                A agricultura regenerativa demonstra que é possível aumentar a
+                produtividade sem comprometer os recursos naturais. Dessa forma,
+                produtores e meio ambiente podem se beneficiar simultaneamente.
+            </p>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Conclusão</h2>
+
+            <p>
+                O fortalecimento do agro depende da adoção de práticas que
+                promovam equilíbrio entre produção e preservação ambiental.
+                A agricultura regenerativa representa uma alternativa eficiente
+                para garantir alimentos, renda e sustentabilidade para o futuro.
+            </p>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Referências</h2>
+
+            <ul>
+                <li>EMBRAPA - Agricultura Sustentável.</li>
+                <li>FAO - Sustainable Agriculture.</li>
+                <li>Ministério da Agricultura e Pecuária.</li>
+                <li>Programa Agrinho.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Projeto desenvolvido para o Concurso Agrinho 2026.
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
 ```
-<p>
-    O agronegócio é um dos setores mais importantes da economia brasileira,
-    sendo responsável pela produção de alimentos, geração de empregos e
-    desenvolvimento de diversas regiões do país. Entretanto, o crescimento
-    da produção agrícola precisa acontecer de forma equilibrada para
-    preservar os recursos naturais utilizados pelas futuras gerações.
-</p>
-
-<p>
-    Nesse contexto, a agricultura regenerativa surge como uma alternativa
-    capaz de unir produtividade e sustentabilidade. Por meio de práticas
-    que recuperam a qualidade do solo e protegem o meio ambiente, é
-    possível fortalecer o agro sem comprometer a natureza.
-</p>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- PROBLEMA -->
-
-<!-- ========================= -->
-
-<section class="card">
-    <h2>O Problema</h2>
-
-```
-<p>
-    Em muitas áreas agrícolas, o uso inadequado do solo pode causar
-    erosão, perda de nutrientes, compactação da terra e redução da
-    biodiversidade. Esses fatores diminuem a produtividade das lavouras
-    e aumentam os custos para os produtores.
-</p>
-
-<p>
-    Além disso, a degradação ambiental afeta a disponibilidade de água,
-    a fertilidade natural do solo e o equilíbrio dos ecossistemas,
-    tornando a produção menos sustentável ao longo do tempo.
-</p>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- AGRICULTURA REGENERATIVA -->
-
-<!-- ========================= -->
-
-<section class="card">
-    <h2>O que é Agricultura Regenerativa?</h2>
-
-```
-<p>
-    A agricultura regenerativa é um conjunto de práticas agrícolas que
-    busca recuperar a saúde do solo e dos ecossistemas. Entre essas
-    práticas estão o plantio direto, a rotação de culturas, a cobertura
-    vegetal e a preservação das áreas naturais.
-</p>
-
-<p>
-    Diferentemente dos modelos tradicionais que focam apenas na produção,
-    a agricultura regenerativa procura melhorar continuamente os recursos
-    naturais utilizados no processo produtivo.
-</p>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- BENEFÍCIOS -->
-
-<!-- ========================= -->
-
-<section class="beneficios">
-
-```
-<div class="beneficio">
-    <h3>🌱 Solo Saudável</h3>
-    <p>
-        Maior fertilidade e redução da erosão.
-    </p>
-</div>
-
-<div class="beneficio">
-    <h3>🚜 Produção Sustentável</h3>
-    <p>
-        Melhor produtividade a longo prazo.
-    </p>
-</div>
-
-<div class="beneficio">
-    <h3>💧 Conservação da Água</h3>
-    <p>
-        Melhor retenção de umidade no solo.
-    </p>
-</div>
-
-<div class="beneficio">
-    <h3>🌎 Preservação Ambiental</h3>
-    <p>
-        Proteção da biodiversidade e dos ecossistemas.
-    </p>
-</div>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- CALCULADORA -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Calculadora de Produção Sustentável</h2>
-
-<p>
-    Informe a área da propriedade para visualizar uma estimativa dos
-    benefícios que práticas regenerativas podem proporcionar.
-</p>
-
-<input
-    type="number"
-    id="hectares"
-    placeholder="Área em hectares">
-
-<button onclick="calcularProducao()">
-    Calcular
-</button>
-
-<div id="resultadoProducao"></div>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- ÍNDICE -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Índice de Sustentabilidade</h2>
-
-<p>
-    Selecione as práticas utilizadas em sua propriedade e descubra o
-    nível de sustentabilidade alcançado.
-</p>
-
-<label>
-    <input type="checkbox" id="plantio">
-    Plantio Direto
-</label>
-
-<label>
-    <input type="checkbox" id="rotacao">
-    Rotação de Culturas
-</label>
-
-<label>
-    <input type="checkbox" id="cobertura">
-    Cobertura Vegetal
-</label>
-
-<label>
-    <input type="checkbox" id="nascentes">
-    Preservação de Nascentes
-</label>
-
-<button onclick="calcularIndice()">
-    Avaliar
-</button>
-
-<div id="resultadoIndice"></div>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- SIMULADOR -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Simulador Ambiental</h2>
-
-<p>
-    Descubra como práticas sustentáveis podem contribuir para a redução
-    dos impactos ambientais.
-</p>
-
-<input
-    type="number"
-    id="areaCarbono"
-    placeholder="Área em hectares">
-
-<button onclick="simularCarbono()">
-    Simular
-</button>
-
-<div id="resultadoCarbono"></div>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- QUIZ -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Quiz da Sustentabilidade</h2>
-
-<p>
-    Teste seus conhecimentos sobre agricultura regenerativa.
-</p>
-
-<p>
-    Qual prática ajuda a conservar o solo?
-</p>
-
-<label>
-    <input type="radio" name="q1" value="0">
-    Queimadas
-</label>
-
-<label>
-    <input type="radio" name="q1" value="1">
-    Plantio Direto
-</label>
-
-<label>
-    <input type="radio" name="q1" value="0">
-    Desmatamento
-</label>
-
-<button onclick="corrigirQuiz()">
-    Ver Resultado
-</button>
-
-<div id="resultadoQuiz"></div>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- SUSTENTABILIDADE -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Relação com a Sustentabilidade</h2>
-
-<p>
-    A agricultura regenerativa demonstra que é possível produzir alimentos
-    em grande escala sem comprometer os recursos naturais. Ao recuperar
-    o solo e preservar a biodiversidade, essas práticas garantem maior
-    equilíbrio entre desenvolvimento econômico e conservação ambiental.
-</p>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- CONCLUSÃO -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Conclusão</h2>
-
-<p>
-    O tema "Agro forte, futuro sustentável" reforça a necessidade de
-    buscar soluções que permitam o crescimento da produção agrícola sem
-    prejudicar o meio ambiente. A agricultura regenerativa representa um
-    caminho promissor para garantir produtividade, segurança alimentar e
-    preservação dos recursos naturais para as próximas gerações.
-</p>
-```
-
-</section>
-
-<!-- ========================= -->
-
-<!-- REFERÊNCIAS -->
-
-<!-- ========================= -->
-
-<section class="card">
-
-```
-<h2>Referências</h2>
-
-<ul>
-    <li>EMBRAPA - Agricultura Sustentável.</li>
-    <li>FAO - Sustainable Agriculture.</li>
-    <li>Ministério da Agricultura e Pecuária.</li>
-    <li>Programa Agrinho.</li>
-    <li>SENAR.</li>
-</ul>
-```
-
-</section>
